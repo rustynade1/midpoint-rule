@@ -1,12 +1,3 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 library(ggplot2)
 
@@ -15,7 +6,7 @@ ui <- fluidPage(
 
     # Application title
     titlePanel("Midpoint Rule Calculator"),
-
+    # Sidebar with default values
     sidebarLayout(
         sidebarPanel(
             func <-textInput("input_func",
@@ -41,7 +32,7 @@ ui <- fluidPage(
             calcButton <-actionButton("calculate_btn", "Calculate")
         ),
 
-        # Show a plot of the generated distribution
+        # shows visual representation and estimate result
         mainPanel(
            plotOutput("midPlot"),
            textOutput("result")

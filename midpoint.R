@@ -9,10 +9,10 @@ midpoint <- function(input, output){
     # Define upper and lower limit
     a_reactive <- reactive({input$lower_limit})
     a <- a_reactive()
-    #print(a)
+  
     b_reactive <- reactive({input$upper_limit})
     b <- b_reactive()
-    #print(b)
+    
 
     # Define the number of partitions
     n_reactive <- reactive({input$partition_num})
@@ -53,11 +53,12 @@ midpoint <- function(input, output){
 
     
     shape$area <- f((shape$xleft + shape$xright)/2, iFunc()) * width
-    print(shape$area)
+    
     totalArea <- cumsum(shape$area)
-    print(totalArea)
+    
     midpointEstimate = totalArea[length(shape$area)]
-    output$result = renderPrint({midpointEstimate})
+    print(midpointEstimate)
+    output$result = renderText({paste("Midpoint Estimate:",midpointEstimate)})
 
     
     output$midPlot <- renderPlot({
