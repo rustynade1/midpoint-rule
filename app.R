@@ -44,18 +44,13 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
            plotOutput("midPlot"),
-           verbatimTextOutput("result")
+           textOutput("result")
         )
     )
 )
 
-# # Define server logic required to draw a histogram
-# server <- function(input, output) {
-# 
-#     output$midPlot <- renderPlot({
-#         
-#     })
-# }
+#Define server logic
+
 source("midpoint.R")
 
 # Run the application 
