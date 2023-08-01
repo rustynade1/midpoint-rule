@@ -16,7 +16,7 @@ ui <- fluidPage(
             ),
             partitions <-numericInput("partition_num",
                 label = "Number of Partitions", 
-                value = 4, 
+                value = 8, 
                 width = "45%"
             ),
             uLimit <-numericInput("upper_limit",
