@@ -72,7 +72,8 @@ midpoint <- function(input, output){
           data = points,
           aes(x, y)
         ) +
-        theme_minimal()
+        theme_minimal()+
+        coord_fixed()
     })
     
   })
